@@ -3733,6 +3733,7 @@ dependencies = [
 name = "node-template-runtime"
 version = "3.0.0-monthly-2021-10"
 dependencies = [
+ "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking",
  "frame-executive",

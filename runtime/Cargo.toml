@@ -43,6 +43,11 @@ default-features = false
 git = 'https://github.com/purestake/frontier.git'
 branch = 'workshop-target'
 
+[dependencies.fp-rpc]
+default-features = false
+git = 'https://github.com/purestake/frontier.git'
+branch = 'workshop-target'
+
 [dependencies.frame-benchmarking]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
@@ -247,4 +252,5 @@ std = [
     'pallet-evm/std',
     'pallet-ethereum/std',
     'fp-self-contained/std',
+    'fp-rpc/std',
 ]
