@@ -33,6 +33,16 @@ default-features = false
 git = 'https://github.com/purestake/frontier.git'
 branch = 'workshop-target'
 
+[dependencies.pallet-ethereum]
+default-features = false
+git = 'https://github.com/purestake/frontier.git'
+branch = 'workshop-target'
+
+[dependencies.fp-self-contained]
+default-features = false
+git = 'https://github.com/purestake/frontier.git'
+branch = 'workshop-target'
+
 [dependencies.frame-benchmarking]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
@@ -235,4 +245,6 @@ std = [
     'sp-transaction-pool/std',
     'sp-version/std',
     'pallet-evm/std',
+    'pallet-ethereum/std',
+    'fp-self-contained/std',
 ]
