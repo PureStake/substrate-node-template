@@ -28,6 +28,11 @@ features = ['derive']
 package = 'parity-scale-codec'
 version = '2.0.0'
 
+[dependencies.pallet-evm]
+default-features = false
+git = 'https://github.com/purestake/frontier.git'
+branch = 'workshop-target'
+
 [dependencies.frame-benchmarking]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
@@ -229,4 +234,5 @@ std = [
     'sp-std/std',
     'sp-transaction-pool/std',
     'sp-version/std',
+    'pallet-evm/std',
 ]
