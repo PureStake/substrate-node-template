@@ -35,6 +35,9 @@ use fp_rpc::TransactionStatus;
 #[cfg(feature = "std")]
 pub use pallet_evm::GenesisAccount;
 
+mod precompile;
+use precompile::PalletTemplatePrecompile;
+
 // A few exports that help ease life for downstream crates.
 pub use frame_support::{
 	construct_runtime, parameter_types,
@@ -314,6 +317,8 @@ impl pallet_evm::Config for Runtime {
 	// Add several standard precompiles. Inspired by Byzantiium precompiles
 	// https://github.com/ethereum/go-ethereum/blob/3c46f557/core/vm/contracts.go#L56
 	// Frontier contains more precompiles you can use too.
+	// When you use a tuple, the addresses start at 0x01 to match ethereum mainnet.
+	// So our pallet wrapper is at address 0x06.
 	type Precompiles = (
 		pallet_evm_precompile_simple::ECRecover,
 		pallet_evm_precompile_simple::Sha256,
@@ -321,6 +326,7 @@ impl pallet_evm::Config for Runtime {
 		pallet_evm_precompile_simple::Identity,
 		pallet_evm_precompile_modexp::Modexp,
 		pallet_evm_precompile_simple::ECRecoverPublicKey,
+		PalletTemplatePrecompile<Runtime>,
 	);
 }
 
