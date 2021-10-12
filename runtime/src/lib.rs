@@ -35,6 +35,8 @@ use fp_rpc::TransactionStatus;
 #[cfg(feature = "std")]
 pub use pallet_evm::GenesisAccount;
 
+mod precompile;
+
 // A few exports that help ease life for downstream crates.
 pub use frame_support::{
 	construct_runtime, parameter_types,

@@ -1137,6 +1137,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "derivative"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fcc3dd5e9e9c0b295d6e1e4d811fb6f157d5ffd784b8d202fc62eac8035a770b"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "derive_more"
 version = "0.99.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1484,7 +1495,7 @@ dependencies = [
 [[package]]
 name = "fc-consensus"
 version = "2.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "async-trait",
  "derive_more",
@@ -1510,7 +1521,7 @@ dependencies = [
 [[package]]
 name = "fc-db"
 version = "2.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "fp-storage",
  "kvdb",
@@ -1526,7 +1537,7 @@ dependencies = [
 [[package]]
 name = "fc-mapping-sync"
 version = "2.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "fc-consensus",
  "fc-db",
@@ -1544,7 +1555,7 @@ dependencies = [
 [[package]]
 name = "fc-rpc"
 version = "2.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "ethereum",
  "ethereum-types",
@@ -1589,7 +1600,7 @@ dependencies = [
 [[package]]
 name = "fc-rpc-core"
 version = "1.1.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "ethereum-types",
  "jsonrpc-core",
@@ -1694,7 +1705,7 @@ dependencies = [
 [[package]]
 name = "fp-consensus"
 version = "2.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "ethereum",
  "parity-scale-codec",
@@ -1708,7 +1719,7 @@ dependencies = [
 [[package]]
 name = "fp-evm"
 version = "3.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "evm",
  "impl-trait-for-tuples 0.1.3",
@@ -1721,7 +1732,7 @@ dependencies = [
 [[package]]
 name = "fp-rpc"
 version = "3.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "ethereum",
  "ethereum-types",
@@ -1738,7 +1749,7 @@ dependencies = [
 [[package]]
 name = "fp-self-contained"
 version = "1.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "ethereum",
  "frame-support",
@@ -1755,7 +1766,7 @@ dependencies = [
 [[package]]
 name = "fp-storage"
 version = "2.0.0"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 
 [[package]]
 name = "frame-benchmarking"
@@ -3906,6 +3917,7 @@ dependencies = [
 name = "node-template-runtime"
 version = "3.0.0-monthly-2021-10"
 dependencies = [
+ "fp-evm",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking",
@@ -3915,6 +3927,7 @@ dependencies = [
  "frame-system-benchmarking",
  "frame-system-rpc-runtime-api",
  "hex-literal",
+ "num_enum",
  "pallet-aura",
  "pallet-balances",
  "pallet-ethereum",
@@ -3929,6 +3942,7 @@ dependencies = [
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
  "parity-scale-codec",
+ "precompile-utils",
  "scale-info",
  "sp-api",
  "sp-block-builder",
@@ -4088,6 +4102,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "num_enum"
+version = "0.5.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3f9bd055fb730c4f8f4f57d45d35cd6b3f0980535b056dc7ff119cee6a66ed6f"
+dependencies = [
+ "derivative",
+ "num_enum_derive",
+]
+
+[[package]]
+name = "num_enum_derive"
+version = "0.5.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "486ea01961c4a818096de679a8b740b26d9033146ac5291b1c98557658f8cdd9"
+dependencies = [
+ "proc-macro-crate 1.1.0",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "object"
 version = "0.26.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4180,7 +4216,7 @@ dependencies = [
 [[package]]
 name = "pallet-ethereum"
 version = "4.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "ethereum",
  "ethereum-types",
@@ -4209,7 +4245,7 @@ dependencies = [
 [[package]]
 name = "pallet-evm"
 version = "6.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
  "evm",
  "evm-gasometer",
@@ -4237,9 +4273,8 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-modexp"
 version = "2.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
- "evm",
  "fp-evm",
  "num",
  "sp-core",
@@ -4249,9 +4284,8 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-simple"
 version = "2.0.0-dev"
-source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#ba6eba4d8165bddf9b972ecb70858c7def979104"
+source = "git+https://github.com/purestake/frontier.git?branch=workshop-target#31ad4ce8d0019b0f5857d6ac96ebaeefd7ee3d67"
 dependencies = [
- "evm",
  "fp-evm",
  "ripemd160",
  "sp-core",
@@ -4795,6 +4829,36 @@ name = "ppv-lite86"
 version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ac74c624d6b2d21f425f752262f42188365d7b8ff1aff74c82e45136510a4857"
+
+[[package]]
+name = "precompile-utils"
+version = "0.1.0"
+source = "git+https://github.com/purestake/moonbeam?branch=frontier-workshop-2021#685c25f18e339ba998f448d37db3fbdddeb1a74b"
+dependencies = [
+ "evm",
+ "frame-support",
+ "frame-system",
+ "log",
+ "num_enum",
+ "pallet-evm",
+ "parity-scale-codec",
+ "precompile-utils-macro",
+ "sha3 0.9.1",
+ "sp-core",
+ "sp-io",
+ "sp-std",
+]
+
+[[package]]
+name = "precompile-utils-macro"
+version = "0.1.0"
+source = "git+https://github.com/purestake/moonbeam?branch=frontier-workshop-2021#685c25f18e339ba998f448d37db3fbdddeb1a74b"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "sha3 0.8.2",
+ "syn",
+]
 
 [[package]]
 name = "primitive-types"
