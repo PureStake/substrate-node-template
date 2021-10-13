@@ -131,6 +131,11 @@ fn testnet_genesis(
 	endowed_accounts: Vec<AccountId>,
 	_enable_println: bool,
 ) -> GenesisConfig {
+	// This is the simplest bytecode to revert without returning any data.
+	// We will pre-deploy it under our precompile so they can be called from contracts.
+	// (PUSH1 0x00 PUSH1 0x00 REVERT)
+	let revert_bytecode = vec![0x60, 0x00, 0x60, 0x00, 0xFD];
+
 	GenesisConfig {
 		system: SystemConfig {
 			// Add Wasm runtime to storage.
@@ -164,6 +169,17 @@ fn testnet_genesis(
 						code: vec![],
 						storage: std::collections::BTreeMap::new(),
 					}
+				);
+
+				// Put some bogus revert code under our precompile contract so it can be called from Solidity
+				accounts.insert(
+					H160::from_slice(&hex_literal::hex!("0000000000000000000000000000000000000006")),
+					GenesisAccount {
+						nonce: Default::default(),
+						balance: Default::default(),
+						storage: Default::default(),
+						code: revert_bytecode.clone(),
+					},
 				);
 				accounts
 			}
